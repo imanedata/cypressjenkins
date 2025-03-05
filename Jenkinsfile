@@ -15,7 +15,7 @@ pipeline{
         }
         stage('run cypress'){
             steps{
-                sh 'npx cypress run'
+                sh 'npx cypress run --env grepTags=@regression'
             }
         }
     }

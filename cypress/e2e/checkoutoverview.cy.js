@@ -4,7 +4,7 @@ import loginPage from "../pages/login.page";
 import ProductsPage from "../pages/product.page";
 import CartPage from "../pages/cart.page";
 import CheckoutInformationPage from "../pages/checkoutinformationpage.page";
-describe("Test dela page de paiement", () => {
+describe("Test dela page de paiement", { tags: '@regression' }, () => {
 
     beforeEach(() => {
         cy.visit("https://www.saucedemo.com");
@@ -22,7 +22,7 @@ describe("Test dela page de paiement", () => {
         cy.url().should("include", "/checkout-step-two.html"); 
     });
 
-    it("Vérifier que le prix total est visible", () => {
+    it("Vérifier que le prix total est visible", { tags: '@checkoutoverviwe' },() => {
         CheckoutOverviewPage.verifierleprix();
         cy.get(".summary_subtotal_label").should("exist");
         cy.get(".summary_total_label").should("exist");

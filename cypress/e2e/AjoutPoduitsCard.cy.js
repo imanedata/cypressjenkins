@@ -5,9 +5,9 @@ import loginPage from "../pages/login.page";
 import productPage from "../pages/product.page";
 
 
-describe("Test affichage des produits ajoutés dans cart", ()=>{
+describe("Test affichage des produits ajoutés dans cart",{ tags: '@regression' }, ()=>{
     
-    context("Test affichage des produits ajoutés dans cart", () => {
+    context("Test affichage des produits ajoutés dans cart", { tags: '@ajout' }, () => {
         beforeEach(() =>{
             cy.visit("https://www.saucedemo.com/");
             loginPage.login("standard_user", "secret_sauce");

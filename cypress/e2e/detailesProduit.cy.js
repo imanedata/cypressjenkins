@@ -1,9 +1,9 @@
 import loginPage from "../pages/login.page"
 import productsPage from "../pages/product.page"
 
-describe('detailles product', () => {
+describe('detailles product', { tags: '@regression' },() => {
   context('success', ()=>{
-    it('passes', () => {
+    it('passes', { tags: '@details' },() => {
       cy.visit('https://www.saucedemo.com/')
       loginPage.login("standard_user", "secret_sauce")
       productsPage.cliquerSurProduit("Sauce Labs Backpack")
