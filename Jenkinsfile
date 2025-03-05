@@ -6,7 +6,12 @@ pipeline{
             args "--entrypoint=''"
         }
     }
+    parameters {
 
+
+        choice(name: 'CHOICE', choices: ['ajout', 'affichage', 'chekout'], description: 'tags')
+
+    }
     stages{
         stage('Installation node_modules'){
             steps{
@@ -15,12 +20,11 @@ pipeline{
         }
         stage('run cypress'){
             steps{
-                sh 'npx cypress run --env grepTags=@regression'
+                sh 'npx cypress run --env grepTags=@${params.CHOICE}'
             }
         }
     }
     post {
-        
     always {
         junit "results/**/*.xml"
     }
