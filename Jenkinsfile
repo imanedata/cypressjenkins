@@ -10,7 +10,7 @@ pipeline{
     stages{
         stage("cypress version"){
             stapes{
-                sh 'cypress --version'
+                sh 'npm install'
                 sh 'npx cypress open'
             }
 
