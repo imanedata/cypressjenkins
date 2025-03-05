@@ -20,13 +20,13 @@ pipeline{
         }
         stage('run cypress'){
             steps{
-                sh 'npx cypress run --env grepTags=@${params.CHOICE}'
+                sh 'npx cypress run --env grepTags=@regression'
             }
         }
     }
     post {
     always {
-        archiveArtifacts artifacts: 'cypress/reports/**/*.*', followSymlinks: false
+        junit "results/**/*.xml"
     }
 }
 }

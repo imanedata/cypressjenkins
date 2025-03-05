@@ -4,6 +4,7 @@
     "@types/cypress": "^0.1.6",
     "cypress": "^14.0.3",
     "cypress-mochawesome-reporter": "^3.8.2",
+    "mocha-multi-reporters": "^1.5.1",
     "multiple-cucumber-html-reporter": "^3.9.2"
   },
   "name": "sauce_demo_collab_fevrier2025-dev",
