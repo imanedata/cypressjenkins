@@ -11,9 +11,10 @@ pipeline{
         stage('Installation node_modules'){
             steps{
                 sh 'npm install'
+                sh 'ehco "affichage"'
             }
         }
-        stage('Tests e2e'){
+        stage('run cypress'){
             steps{
                 sh 'npx cypress run'
             }
