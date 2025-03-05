@@ -1,26 +1,22 @@
 pipeline{
-    agent {
-        docker {
-            image "cypress/browsers"
-            args "--entrypoint='' "
-        }
 
-        
+    agent{
+        docker{
+            image "cypress/browsers"
+            args "--entrypoint=''"
+        }
     }
+
     stages{
-        stage('npm install'){
+        stage('Installation node_modules'){
             steps{
                 sh 'npm install'
-                
-            
             }
         }
-        stage('run cypress'){
+        stage('Tests e2e'){
             steps{
                 sh 'npx cypress run'
-            
             }
         }
     }
-    
 }
