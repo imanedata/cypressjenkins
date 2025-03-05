@@ -6,12 +6,7 @@ pipeline{
             args "--entrypoint=''"
         }
     }
-    parameters {
 
-
-        choice(name: 'CHOICE', choices: ['ajout', 'affichage', 'chekout'], description: 'tags')
-
-    }
     stages{
         stage('Installation node_modules'){
             steps{
