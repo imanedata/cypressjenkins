@@ -3,7 +3,7 @@
 import loginPage from "../pages/login.page"
 import ProductsPage from "../pages/product.page"
 
-describe('Le tri des produits : Prix', () => {
+describe('Le tri des produits : Prix',{tags : '@regression'}, () => {
     
     beforeEach(() => {
     cy.visit('https://www.saucedemo.com/')
@@ -11,7 +11,7 @@ describe('Le tri des produits : Prix', () => {
     })
 
     context('Page des produits : tri par prix ', () => {
-        it("Tri par prix croissant", () => {
+        it("Tri par prix croissant", {tags : '@tc-008'},() => {
             let prixNonTries = [];
         
             ProductsPage.elements.productPrice()

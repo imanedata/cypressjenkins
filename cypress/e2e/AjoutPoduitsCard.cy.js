@@ -7,13 +7,13 @@ import productPage from "../pages/product.page";
 
 describe("Test affichage des produits ajoutés dans cart",{ tags: '@regression' }, ()=>{
     
-    context("Test affichage des produits ajoutés dans cart", { tags: '@ajout' }, () => {
+    context("Test affichage des produits ajoutés dans cart",  () => {
         beforeEach(() =>{
             cy.visit("https://www.saucedemo.com/");
             loginPage.login("standard_user", "secret_sauce");
         });
 
-        it("Ajouter des produits et vérifier s'ils sont ajoutés dans card", () => {
+        it("Ajouter des produits et vérifier s'ils sont ajoutés dans card",{ tags: '@tc-002' }, () => {
             // ajouter n produits
             let nombreProduits = 4
             let listeProduits =[]

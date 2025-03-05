@@ -22,7 +22,7 @@ describe("Test dela page de paiement", { tags: '@regression' }, () => {
         cy.url().should("include", "/checkout-step-two.html"); 
     });
 
-    it("Vérifier que le prix total est visible", { tags: '@checkoutoverviwe' },() => {
+    it("Vérifier que le prix total est visible", { tags: '@tc-004' },() => {
         CheckoutOverviewPage.verifierleprix();
         cy.get(".summary_subtotal_label").should("exist");
         cy.get(".summary_total_label").should("exist");

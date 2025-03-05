@@ -12,7 +12,7 @@ describe('login scenario', { tags: '@regression' },() => {
     beforeEach('acces url', ()=>{
       cy.visit('https://www.saucedemo.com/')
     })
-    it('correct user and wrong pass', () => {
+    it('correct user and wrong pass', {tags : '@tc-001'},() => {
       loginPage.login("standard_user", "secret_sauce1")
       cy.get('[data-test=error]').should("be.visible")
     }),

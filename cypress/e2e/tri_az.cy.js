@@ -3,7 +3,6 @@
 import loginPage from "../pages/login.page"
 import productPage from "../pages/product.page";
 
-
 describe("Test Tri", () => {
     beforeEach(() => {
         cy.visit("https://www.saucedemo.com");
@@ -15,7 +14,7 @@ describe("Test Tri", () => {
         cy.url().should("include", "/inventory.html");
     });
 
-    it("Tri Alphabétique A-Z", () => {
+    it("Tri Alphabétique A-Z",{tags : '@tc-009'}, () => {
         let produitNonTrier = [];
 
         productPage.elements.productTitle()

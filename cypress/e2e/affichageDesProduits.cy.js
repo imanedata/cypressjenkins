@@ -12,7 +12,7 @@ describe("Test affichage des produits", { tags: '@regression' },() => {
             loginPage.login("standard_user", "secret_sauce");
         });
 
-        it("Récupérer la liste des produits affichés", { tags: '@affichage' }, () => {
+        it("Récupérer la liste des produits affichés", { tags: '@tc-001' }, () => {
             productsPage.elements.productTitle()
                 .should('have.length.greaterThan', 0)
         });
