@@ -8,12 +8,12 @@ pipeline{
         
     }
     stages{
-        stage("cypress version"){
-            stapes{
+        stage('npm install'){
+            steps{
                 sh 'npm install'
                 sh 'npx cypress open'
+            
             }
-
         }
     }
     
