@@ -3,7 +3,7 @@ pipeline{
     agent{
         docker{
             image "cypress/browsers"
-            args "--entrypoint=''"
+            args "--entrypoint='' --user root"
         }
     }
 
@@ -11,7 +11,6 @@ pipeline{
         stage('Installation node_modules'){
             steps{
                 sh 'npm install'
-                sh 'ehco "affichage"'
             }
         }
         stage('run cypress'){
