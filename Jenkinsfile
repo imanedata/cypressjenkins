@@ -22,7 +22,7 @@ pipeline{
                     if(params.TEST_CASE != null){
                       sh "npx cypress run --env grepTags=@${params.TEST_CASE}"
                     }else{
-                        sh "npx cypress run --env grepTags=@${params.TAGS}"
+                        sh "${params.TAGS}.sh"
                   }
             }
             }
