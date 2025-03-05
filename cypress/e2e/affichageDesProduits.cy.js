@@ -6,13 +6,13 @@ import productsPage from "../pages/product.page"; // Assurez-vous que le chemin 
 describe("Test affichage des produits", { tags: '@regression' },() => {
     
 
-    context("Test affichage des produits",{ tags: '@affichage' }, () => {
+    context("Test affichage des produits",() => {
         beforeEach(() => {
             cy.visit("https://www.saucedemo.com/");
             loginPage.login("standard_user", "secret_sauce");
         });
 
-        it("Récupérer la liste des produits affichés", () => {
+        it("Récupérer la liste des produits affichés", { tags: '@affichage' }, () => {
             productsPage.elements.productTitle()
                 .should('have.length.greaterThan', 0)
         });

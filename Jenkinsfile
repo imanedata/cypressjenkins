@@ -15,7 +15,7 @@ pipeline{
         }
         stage('run cypress'){
             steps{
-                sh 'npx cypress run --env grepTags=@regression'
+                sh 'npx cypress run --env grepTags= @regression --reporter junit \--reporter-options "mochaFile=results/my-test-output.xml,toConsole=true"'
             }
         }
     }
